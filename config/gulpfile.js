@@ -211,10 +211,10 @@ gulp.task('views', () =>
 	return gulp.src(
 		[
 			`${path.src.views}*.html`,
-			// `${path.src.views}**/*.html`,
-			// `${path.src.views}**/**/*.html`,
-			// `${path.src.views}**/**/**/*.html`,
-			// `${path.src.views}**/**/**/**/*.html`
+			`${path.src.views}**/*.html`,
+			`${path.src.views}**/**/*.html`,
+			`${path.src.views}**/**/**/*.html`,
+			`${path.src.views}**/**/**/**/*.html`
 		])
 		.pipe(gulpPlumber(
 			{
