@@ -16,26 +16,86 @@ body
             margin-top 1rem
             letter-spacing 0.1rem
         .container-left
+            width 25rem
             margin-top 5rem
-            margin-left 3rem
             text-align left
-            span
-                font-size 20px
+            display inline-block
+            vertical-align middle
+            .instrument
+                width 24rem            
+                margin-top 3rem
+                span
+                    font-size 1rem
+                    font-weight 700
+                    text-transform uppercase
+                    letter-spacing 0.3rem
+                .boxes
+                    margin-top 1rem
+                    .box
+                        background white
+                        width 6rem
+                        height 6rem
+                        border-radius 1rem
+                        color #F78B1C
+                        font-size 2.4rem
+                        font-weight bold
+                        padding-top 2rem
+                        padding-bottom 2rem
+                        margin-right 1.5rem
+                        text-align center
+                    .box-visible
+                        display inline-block
+                    .box-invisible
+                        display none
+        .rec-container
+            width 4rem
+            text-align center
+            display inline-block
+            vertical-align middle
+            margin-left 6rem
+            margin-right 9rem
+            margin-bottom -12rem
+            .rec-button
+                background #fff
+                width 3.6rem
+                height 3.6rem
+                border-radius 3rem
+                .rec-middle
+                    background linear-gradient(to bottom right, #9F041B, #F5515F)
+                    width 2rem
+                    height 2rem
+                    border-radius 3rem
+                    margin-left 0.8rem
+            .rec-text
+                font-size 1.2rem
                 font-weight 700
                 text-transform uppercase
                 letter-spacing 0.3rem
-            .boxes
-                margin-top 1rem
-                .box
-                    background white
-                    width 6rem
-                    height 6rem
-                    display inline-block
+                margin-left 0.4rem
+        .language
+            width 15rem
+            margin-top 7rem
+            margin-left 52rem
+            span
+                font-size 1rem
+                font-weight 600
+                text-transform uppercase
+                letter-spacing 0.2rem
+                display inline-block
+                vertical-align middle
+            .language-button
+                width 3.2rem
+                height 2rem
+                border 2px solid rgba(0, 0, 0, 0.1)
+                border-radius 1rem
+                display inline-block
+                vertical-align middle
+                .language-circle
+                    background #fff
+                    width 1.7rem
+                    height 1.65rem
                     border-radius 1rem
-                    color #F78B1C
-                    font-size 2.4rem
-                    font-weight bold
-                    padding-top 2rem
-                    padding-bottom 2rem
-                    margin-right 1.5rem
-                    text-align center
+                    border 1px solid rgba(0, 0, 0, 0.1)
+                    box-shadow 0 2px rgba(0, 0, 0, 0.1)
+                    transform translateX(0)
+                    transition transform  0.3s ease-in

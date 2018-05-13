@@ -12,6 +12,6 @@
 
 <body>
     <a href="views/slider.php">Page slider</a>
-    <a href="views/creation.php">Page creation test</a>
+    <a href="views/creation.php">Page creation</a>
 </body>
 </html>
