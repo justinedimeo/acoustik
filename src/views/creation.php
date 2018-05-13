@@ -17,12 +17,21 @@
         <h2>Click on REC to record your song</h2>
         <!-- Drumkit -->
         <div class="container-left">
+            <!-- Remplacer par une boucle for quand on aura fait les bdd -->
             <div class="instrument">
                 <span>Piano</span>
                 <div class="boxes">
                     <div class="box box-a">A</div>
                     <div class="box box-z">Z</div>
                     <div class="box box-e">E</div>
+                </div>
+            </div>
+            <div class="instrument">
+                <span>Saxo</span>
+                <div class="boxes">
+                    <div class="box box-q">Q</div>
+                    <div class="box box-s">S</div>
+                    <div class="box box-d">D</div>
                 </div>
             </div>
         </div>
