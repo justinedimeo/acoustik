@@ -12,6 +12,7 @@
 
 <body>
     <div id="creation">
+    <? include 'header.php';?>
         <!-- Title -->
         <h1>Create music !</h1>
         <h2>Click on REC to record your song</h2>

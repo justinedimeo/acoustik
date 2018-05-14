@@ -13,21 +13,25 @@
 
 <body>
     <div class="slider">
-        <!-- <h1>Coucou</h1> -->
-        <p class="background-genre">Jazz</p>
-        <div class="card">
-            <h3 class="logo">Acoustik</h3>
-            <h3 class="title-card">Acoustik Jazz Theme</h3>
-            <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and early
-                XX century in African-American communities.</p>
-            <p class="genre">Jazz</p>
-            <div class="instrument-card">
-                <img src="../assets/images/saxo_shadow.png" alt="saxophone">
+        <? include 'header.php';?>
+            <p class="background-genre">Jazz</p>
+            <!-- Colored part of the card -->
+            <div class="card">
+                <h3 class="logo">Acoustik</h3>
+                <h3 class="title-card">Acoustik Jazz Theme</h3>
+                <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and early
+                    XX century in African-American communities.</p>
+                <!-- Genre -->
+                <p class="genre">Jazz</p>
+                <!-- Instrument -->
+                <div class="instrument-card">
+                    <img src="../assets/images/saxo_shadow.png" alt="saxophone">
+                </div>
             </div>
-        </div>
-        <div class="card-create">
-            <p>Create</p>
-        </div>
+            <!-- White part of the card -->
+            <div class="card-create">
+                <p>Create</p>
+            </div>
     </div>
 </body>
 
