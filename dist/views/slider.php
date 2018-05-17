@@ -13,7 +13,7 @@
 
 <body>
     <div class="slider">
-        <? include 'header.php';?>
+        <?php include 'header.php';?>
             <p class="background-genre">Jazz</p>
             <!-- Colored part of the card -->
             <div class="card">
