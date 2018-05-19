@@ -20,10 +20,15 @@
 
     // BLOCK CONTAINING ALL THE CARDS
     .cards
-        transform translateX(30rem)
+        transform translateX(28rem)
         transition 1s ease-in-out
-        .card-genre.two
-            transform translateX(21rem)
+        .card-genre.rap
+            transform translateX(26rem)
+        .card-genre.rock
+            transform translateX(52rem)
+        .card-genre.pop
+            transform translateX(74rem)
+            transform translateY(-31rem)
         .card-genre
             display inline-block
 
@@ -34,7 +39,6 @@
             background #000000
             margin auto
             border-radius 2rem 2rem 0rem 0rem
-            background: linear-gradient(to bottom, #F76B1C, #FAD961) fixed
             padding-left 2.6rem
             padding-right 2.6rem
             padding-top 2rem
@@ -71,9 +75,9 @@
                 position absolute
                 width 100%
                 bottom -5rem
-                left 0rem
+                left 50px
                 img 
-                    width 100%
+                    width 66%
         
         // WHITE PART OF THE CARD
         .card-create
@@ -89,12 +93,10 @@
                 font-family 'Raleway', sans-serif
                 text-transform uppercase
                 font-size 1rem
-                color #F5A623
                 position absolute
                 bottom 1.5rem
                 left 4.35rem
                 font-weight 700
                 padding 0.5rem 4rem
                 border solid #000 0.18rem
-                border-image linear-gradient(to right, #FAD961, #F76B1C) 10
                 border-radius 3rem
