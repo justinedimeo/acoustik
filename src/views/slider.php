@@ -13,26 +13,49 @@
 
 <body>
     <div class="slider">
-        <? include 'header.php';?>
-            <p class="background-genre">Jazz</p>
-            <!-- Colored part of the card -->
-            <div class="card">
-                <h3 class="logo">Acoustik</h3>
-                <h3 class="title-card">Acoustik Jazz Theme</h3>
-                <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and early
-                    XX century in African-American communities.</p>
-                <!-- Genre -->
-                <p class="genre">Jazz</p>
-                <!-- Instrument -->
-                <div class="instrument-card">
-                    <img src="../assets/images/saxo_shadow.png" alt="saxophone">
+        <?php include 'header.php';?>
+        <p class="background-genre">Jazz</p>
+        <!-- Colored part of the card -->
+        <div class="cards">
+            <div class="card-genre">
+                <div class="card">
+                    <h3 class="logo">Acoustik</h3>
+                    <h3 class="title-card">Acoustik Jazz Theme</h3>
+                    <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and
+                        early XX century in African-American communities.</p>
+                    <!-- Genre -->
+                    <p class="genre">Jazz</p>
+                    <!-- Instrument -->
+                    <div class="instrument-card">
+                        <img src="../assets/images/saxo_shadow.png" alt="saxophone">
+                    </div>
+                </div>
+                <!-- White part of the card -->
+                <div class="card-create">
+                    <p>Create</p>
                 </div>
             </div>
-            <!-- White part of the card -->
-            <div class="card-create">
-                <p>Create</p>
+            <div class="card-genre two">
+                <div class="card">
+                    <h3 class="logo">Acoustik</h3>
+                    <h3 class="title-card">Acoustik Jazz Theme</h3>
+                    <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and
+                        early XX century in African-American communities.</p>
+                    <!-- Genre -->
+                    <p class="genre">Jazz</p>
+                    <!-- Instrument -->
+                    <div class="instrument-card">
+                        <img src="../assets/images/saxo_shadow.png" alt="saxophone">
+                    </div>
+                </div>
+                <!-- White part of the card -->
+                <div class="card-create">
+                    <p>Create2</p>
+                </div>
             </div>
+        </div>
     </div>
+    <script src="../scripts/cardSwipe.js"></script>
 </body>
 
 </html>
