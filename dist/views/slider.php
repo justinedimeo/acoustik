@@ -1,3 +1,10 @@
+<?php
+    include 'config.php';
+
+    $query = $pdo->query('SELECT * FROM genres');
+    $genres = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,43 +23,26 @@
         <?php include 'header.php';?>
         <p class="background-genre">Jazz</p>
         <div class="cards">
-            <div class="card-genre">
+        <?php foreach($genres as $_genre): ?>
+            <div class="card-genre <?= $_genre->name ?>">
                 <!-- Colored part of the card -->
-                <div class="card">
+                <div class="card" style="background: linear-gradient(to top, <?= $_genre->background ?>) fixed">
                     <h3 class="logo">Acoustik</h3>
-                    <h3 class="title-card">Acoustik Jazz Theme</h3>
-                    <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and
-                        early XX century in African-American communities.</p>
+                    <h3 class="title-card">Acoustik <?= $_genre->name ?> Theme</h3>
+                    <p class="description-card"><?= $_genre->text ?></p>
                     <!-- Genre -->
-                    <p class="genre">Jazz</p>
+                    <p class="genre"><?= $_genre->name ?></p>
                     <!-- Instrument -->
                     <div class="instrument-card">
-                        <img src="../assets/images/saxo_shadow.png" alt="saxophone">
+                        <img src="<?= $_genre->image ?>" alt="saxophone">
                     </div>
                 </div>
                 <!-- White part of the card -->
                 <div class="card-create">
-                    <p>Create</p>
+                    <a href="creation.php?id=<?= $_genre->id ?>" style="border-image: linear-gradient(to right, <?= $_genre->background ?>) 10; color: <?= $_genre->color ?>">Create</a>
                 </div>
             </div>
-            <div class="card-genre two">
-                <div class="card">
-                    <h3 class="logo">Acoustik</h3>
-                    <h3 class="title-card">Acoustik Jazz Theme</h3>
-                    <p class="description-card">Jazz is a musical genre originating in the Southern United States, created in the late XIX century and
-                        early XX century in African-American communities.</p>
-                    <!-- Genre -->
-                    <p class="genre">Jazz</p>
-                    <!-- Instrument -->
-                    <div class="instrument-card">
-                        <img src="../assets/images/saxo_shadow.png" alt="saxophone">
-                    </div>
-                </div>
-                <!-- White part of the card -->
-                <div class="card-create">
-                    <p>Create</p>
-                </div>
-            </div>
+        <?php endforeach; ?>
         </div>
     </div>
     <script src="../scripts/cardSwipe.js"></script>
