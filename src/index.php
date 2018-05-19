@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?php include 'views/config.php' ?>
     <a href="views/slider.php">Page slider</a>
     <a href="views/creation.php">Page creation</a>
 </body>

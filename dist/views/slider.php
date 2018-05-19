@@ -50,7 +50,7 @@
                 </div>
                 <!-- White part of the card -->
                 <div class="card-create">
-                    <p>Create2</p>
+                    <p>Create</p>
                 </div>
             </div>
         </div>
