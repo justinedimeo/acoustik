@@ -22,11 +22,12 @@
     <div class="slider">
         <?php include 'header.php';?>
         <p class="background-genre">Jazz</p>
+        <div class="previous"></div>
         <div class="cards">
         <?php foreach($genres as $_genre): ?>
             <div class="card-genre <?= $_genre->name ?>">
                 <!-- Colored part of the card -->
-                <div class="card" style="background: linear-gradient(to top, <?= $_genre->background ?>) fixed">
+                <div class="card" style="background: <?= $_genre->color ?>">
                     <h3 class="logo">Acoustik</h3>
                     <h3 class="title-card">Acoustik <?= $_genre->name ?> Theme</h3>
                     <p class="description-card"><?= $_genre->text ?></p>
@@ -44,6 +45,7 @@
             </div>
         <?php endforeach; ?>
         </div>
+        <div class="next"></div>
     </div>
     <script src="../scripts/cardSwipe.js"></script>
 </body>

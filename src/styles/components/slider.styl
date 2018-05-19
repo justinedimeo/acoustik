@@ -1,3 +1,5 @@
+html 
+    overflow hidden
 .slider 
     width 100% 
     height 100vh
@@ -6,6 +8,27 @@
     font-size 2.4rem
     background: linear-gradient(to bottom right, #F76B1C, #FAD961) fixed
     overflow hidden
+
+     // PREVIOUS AND NEXT CARD - INVISBLE
+    .previous
+        width 3.9vw
+        height 75vh
+        position fixed
+        left 0
+        top 15%
+        background #000
+        opacity 0
+        z-index 20
+
+    .next
+        width 3.9vw
+        height 75vh
+        position fixed
+        right 0
+        top 15%
+        background #000
+        opacity 0
+        z-index 20
 
     // NOUN OF THE GENRE IN THE BACKGROUND
     .background-genre
@@ -20,18 +43,18 @@
 
     // BLOCK CONTAINING ALL THE CARDS
     .cards
-        transform translateX(28rem)
-        transition 1s ease-in-out
+        margin-left 37vw
+        transition 0.6s cubic-bezier(0.13, 0.5, 0.66, 0.96)
+        width 500vw
         .card-genre.rap
-            transform translateX(26rem)
+            margin-left 32vw
         .card-genre.rock
-            transform translateX(52rem)
+            margin-left 32vw
         .card-genre.pop
-            transform translateX(74rem)
-            transform translateY(-31rem)
+            margin-left 32vw
         .card-genre
             display inline-block
-
+        
         // COLORED PART OF THE CARD
         .card
             width 21rem
