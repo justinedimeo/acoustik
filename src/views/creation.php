@@ -83,6 +83,6 @@
             <span class="language-qwerty">Qwerty</span>
         </div>
     </div>
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/creationPage.js"></script>
 </body>
 </html>
