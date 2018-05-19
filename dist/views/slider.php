@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <!-- White part of the card -->
-                <div class="card-create">
+                <div class="card-create" style="box-shadow: 0px 8px 16px 0px <?= $_genre->color ?> ">
                     <a href="creation.php?id=<?= $_genre->id ?>" style="border-image: linear-gradient(to right, <?= $_genre->background ?>) 10; color: <?= $_genre->color ?>">Create</a>
                 </div>
             </div>
