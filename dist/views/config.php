@@ -2,10 +2,10 @@
 
 // Connexion variables
 define('DB_HOST', 'localhost');
-define('DB_PORT', '3306');
+define('DB_PORT', '8889');
 define('DB_NAME', 'acoustik');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'root');
 
 try
 {
@@ -14,6 +14,7 @@ try
 
     // Set fetch mode to object
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    die('hey!');
 }
 catch (Exception $e)
 {

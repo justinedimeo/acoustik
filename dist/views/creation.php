@@ -1,6 +1,12 @@
 <?php
     include 'config.php';
 
+    $query = $pdo->query('SELECT * FROM genres  WHERE id = '.$_GET['id']);
+    $genre = $query->fetch();
+
+    $genre_ = $genre->name;
+    echo $genre_;
+
     $query = $pdo->query('SELECT * FROM sounds');
     $sounds = $query->fetchAll();
 ?>
@@ -94,7 +100,7 @@
     
     <!-- Sounds -->
     <?php foreach($sounds as $sound): ?>
-        <audio class="<?= $sound->id; ?>" src="<?= $sound->jazz; ?>"></audio>
+        <audio class="<?= $sound->id; ?>" src="<?= $sound->$genre_; ?>"></audio>
     <?php endforeach; ?>
 
     <script src="../scripts/creationPage.js"></script>

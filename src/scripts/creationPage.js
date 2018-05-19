@@ -1,39 +1,39 @@
 const $box = Array.from(document.querySelectorAll('.box'))
-// const $sounds = Array.from($drumkit.querySelectorAll('audio'))
+const $sounds = Array.from(document.querySelectorAll('audio'))
 const $languageButton = document.querySelector('.language-button')
 const $languageButtonCircle = document.querySelector('.language-circle')
 const $languageAzerty = document.querySelector('.language-azerty')
 const $languageQwerty = document.querySelector('.language-qwerty')
 
-// document.addEventListener('keydown', (event) => {
-//     const $button = $buttons.find((element) => element.classList.contains(`key-${event.keyCode}`))
+for (const $box_ of $box) {    
+    // Making sound on click
+    $box_.addEventListener('mousedown', (event) => {
+        event.preventDefault()
 
-//     if ($button) {
-//         playSound($button.dataset.sound)
-//     }
-// })
-
-// const playSound = (soundName) => {
-//     const $sound = $sounds.find((element) => element.classList.contains(soundName))
-
-//     $sound.currentTime = 0
-//     $sound.play()
-// } 
-
-// Changing letters at language change
-for (const $box_ of $box) {
-    $box_.addEventListener('click', () => {
-        // event.preventDefault()
-
-        console.log('click')
-        // playSound($box_.dataset.sound)
+        playSound($box_.dataset.sound)
     })
 
+    // Changing letters at language change
     $languageButton.addEventListener('click', () => {
         $box_.classList.toggle('box-invisible')
         $box_.classList.toggle('box-visible')
     })
 }
+
+document.addEventListener('keydown', (event) => {
+    const $box_ = $box.find((element) => element.classList.contains(`key-${event.keyCode}`))
+
+    if ($box_) {
+        playSound($box_.dataset.sound)
+    }
+})
+
+const playSound = (soundName) => {
+    const $sound = $sounds.find((element) => element.classList.contains(soundName))
+
+    $sound.currentTime = 0
+    $sound.play()
+} 
 
 // Animation circle language
 $languageButton.addEventListener('click', () => {
