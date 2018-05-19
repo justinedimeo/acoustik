@@ -11,22 +11,36 @@ $slider.style.background = 'linear-gradient(to bottom right, #F76B1C, #FAD961) f
 
 let i = 1
 
-$previous.addEventListener('click', () =>{
-    console.log(i)
-    if(i!=1){
+$previous.addEventListener('click', () => {
+    previous()
+})
+
+$next.addEventListener('click', () => {
+    next()
+})
+
+window.addEventListener("keydown", (event) => {
+    if (event.keyCode == 40) {
+        next()
+    } else if (event.keyCode == 38) {
+        previous()
+    }
+})
+
+function previous(){
+    if (i != 1) {
         $block.style.transform += 'translateX(59vw)'
         i--
         $bgGenre.innerHTML = $name[i]
         $slider.style.background = $bgSlider[i]
     }
-})
+}
 
-$next.addEventListener('click', () =>{
-    console.log(i)
-    if(i!=4){
+function next(){
+    if (i != 4) {
         $block.style.transform += 'translateX(-59vw)'
         i++
         $bgGenre.innerHTML = $name[i]
         $slider.style.background = $bgSlider[i]
     }
-})
+}
