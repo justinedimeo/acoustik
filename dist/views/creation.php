@@ -1,3 +1,10 @@
+<?php
+    include 'config.php';
+
+    $query = $pdo->query('SELECT * FROM sounds');
+    $sounds = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,23 +30,23 @@
             <div class="instrument">
                 <span>Piano</span>
                 <div class="boxes">
-                    <div class="box box-visible">A</div>
-                    <div class="box box-visible">Z</div>
-                    <div class="box box-visible">E</div>
-                    <div class="box box-invisible">Q</div>
-                    <div class="box box-invisible">W</div>
-                    <div class="box box-invisible">E</div>
+                    <div class="box box-visible key-65" data-sound="1">A</div>
+                    <div class="box box-visible key-90" data-sound="2">Z</div>
+                    <div class="box box-visible key-69" data-sound="3">E</div>
+                    <div class="box box-invisible key-65" data-sound="1">Q</div>
+                    <div class="box box-invisible key-90" data-sound="2">W</div>
+                    <div class="box box-invisible key-69" data-sound="3">E</div>
                 </div>
             </div>
             <div class="instrument">
                 <span>Saxo</span>
                 <div class="boxes">
-                    <div class="box box-visible">Q</div>
-                    <div class="box box-visible">S</div>
-                    <div class="box box-visible">D</div>
-                    <div class="box box-invisible">A</div>
-                    <div class="box box-invisible">S</div>
-                    <div class="box box-invisible">D</div>
+                    <div class="box box-visible key-81" data-sound="4">Q</div>
+                    <div class="box box-visible key-83" data-sound="5">S</div>
+                    <div class="box box-visible key-68" data-sound="6">D</div>
+                    <div class="box box-invisible key-81" data-sound="4">A</div>
+                    <div class="box box-invisible key-83" data-sound="5">S</div>
+                    <div class="box box-invisible key-68" data-sound="6">D</div>
                 </div>
             </div>
         </div>
@@ -54,23 +61,23 @@
             <div class="instrument">
                 <span>Drums</span>
                 <div class="boxes">
-                    <div class="box box-visible">I</div>
-                    <div class="box box-visible">O</div>
-                    <div class="box box-visible">P</div>
-                    <div class="box box-invisible">I</div>
-                    <div class="box box-invisible">O</div>
-                    <div class="box box-invisible">P</div>
+                    <div class="box box-visible key-73" data-sound="7">I</div>
+                    <div class="box box-visible key-79" data-sound="8">O</div>
+                    <div class="box box-visible key-80" data-sound="9">P</div>
+                    <div class="box box-invisible key-73" data-sound="7">I</div>
+                    <div class="box box-invisible key-79" data-sound="8">O</div>
+                    <div class="box box-invisible key-80" data-sound="9">P</div>
                 </div>
             </div>
             <div class="instrument">
                 <span>Guitar</span>
                 <div class="boxes">
-                    <div class="box box-visible">K</div>
-                    <div class="box box-visible">L</div>
-                    <div class="box box-visible">M</div>
-                    <div class="box box-invisible">K</div>
-                    <div class="box box-invisible">L</div>
-                    <div class="box box-invisible">,</div>
+                    <div class="box box-visible key-75" data-sound="10">K</div>
+                    <div class="box box-visible key-76" data-sound="11">L</div>
+                    <div class="box box-visible key-77" data-sound="12">M</div>
+                    <div class="box box-invisible key-75" data-sound="10">K</div>
+                    <div class="box box-invisible key-76" data-sound="11">L</div>
+                    <div class="box box-invisible key-77" data-sound="12">,</div>
                 </div>
             </div>
         </div>
@@ -83,6 +90,13 @@
             <span class="language-qwerty">Qwerty</span>
         </div>
     </div>
+
+    
+    <!-- Sounds -->
+    <?php foreach($sounds as $sound): ?>
+        <audio class="<?= $sound->id; ?>" src="<?= $sound->jazz; ?>"></audio>
+    <?php endforeach; ?>
+
     <script src="../scripts/creationPage.js"></script>
 </body>
 </html>
