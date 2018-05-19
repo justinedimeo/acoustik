@@ -12,12 +12,13 @@
 
 <body>
     <div id="creation">
-    <? include 'header.php';?>
+    <?php include 'header.php';?>
         <!-- Title -->
         <h1 class="creation-page">Create music !</h1>
         <h2>Click on REC to record your song</h2>
         <!-- Drumkit -->
-        <div class="container-left">
+        <div class="container">
+        <div class="container-left left">
             <!-- Remplacer par une boucle for quand on aura fait les bdd -->
             <div class="instrument">
                 <span>Piano</span>
@@ -72,6 +73,7 @@
                     <div class="box box-invisible">,</div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="language">
             <span class="language-azerty">Azerty</span>
