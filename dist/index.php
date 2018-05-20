@@ -15,6 +15,6 @@
     <a href="views/slider.php">Page slider</a>
     <a href="views/creation.php">Page creation</a>
     <a href="views/custom.php">Page custom</a>
-    <a href="views/test.php">Page test</a>
+    <a href="views/localisation.php">Page test</a>
 </body>
 </html>

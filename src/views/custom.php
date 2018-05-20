@@ -19,7 +19,6 @@
         <div class="custom" style="background : linear-gradient(to bottom right, #50B3F3, #9BC2EE) fixed">
             <?php include 'header.php' ?>
             <h3>Well Done !</h3>
-            <p>Your music is ready to be on the top charts</p>
             <p>Chose a stamp of your location and let the world know you rock ✌️</p>
             <div class="disc">
                 <div class="center-disk"></div>
@@ -27,11 +26,13 @@
             <div class="button-custom">
                 <a href="#">Send</a>
             </div>
-            <div class="cover">
+            <div class="cover" onclick="stamp();">
                 <p class="click-me">Click on me</p>
                 <p class="song-number">23</p>
+                <?php include 'localisation.php' ?>
             </div>
         </div>
+        <script src="../scripts/stamp.js"></script>
     </body>
 
     </html>
