@@ -20,9 +20,9 @@ $next.addEventListener('click', () => {
 })
 
 window.addEventListener("keydown", (event) => {
-    if (event.keyCode == 40) {
+    if (event.keyCode == 39) {
         next()
-    } else if (event.keyCode == 38) {
+    } else if (event.keyCode == 37) {
         previous()
     }
 })

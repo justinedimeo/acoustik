@@ -18,7 +18,7 @@
     <title>Slider</title>
 </head>
 
-<body>
+<body class="overflow">
     <div class="slider">
         <?php include 'header.php';?>
         <p class="background-genre">Jazz</p>

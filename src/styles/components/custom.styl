@@ -1,0 +1,48 @@
+.custom
+    height 100vh
+    h3, p
+        color #ffffff
+        text-align center
+        font-family 'Raleway', sans-serif
+    h3
+        font-size 2rem
+        font-weight 700
+        margin-bottom 1rem
+    p
+        font-size 1rem
+        font-weight 100
+    a
+        color #fff
+    .disc
+        width 18rem
+        height 18rem
+        border-radius 10rem
+        margin 4rem auto
+        background-image url('https://source.unsplash.com/random/400x400')
+        position relative
+        animation-duration 4s
+        animation-name rotation
+        animation-iteration-count 1
+        animation-direction normal
+        animation-timing-function linear
+        animation-delay 3s
+      .center-disk
+            width 4rem
+            height 4rem
+            border-radius 10rem
+            background #fff
+            position absolute
+            top 7rem
+            left 7rem
+
+
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+  
+    to {
+        transform rotate(360deg)
+    }
+}
