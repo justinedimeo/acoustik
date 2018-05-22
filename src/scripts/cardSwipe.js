@@ -6,6 +6,15 @@ const $bgGenre = document.querySelector('.background-genre')
 const $slider = document.querySelector('.slider')
 let $name = ['', 'jazz', 'rap', 'rock', 'pop']
 let $bgSlider = ['', 'linear-gradient(to bottom right, #F76B1C, #FAD961) fixed', 'linear-gradient(to bottom right, #429321, #C0E67B) fixed', 'linear-gradient(to bottom right, #9F041B, #F5515F) fixed', 'linear-gradient(to bottom right, #3E71E6, #ADC4EB) fixed']
+let $cardResponsive = Array.from(document.querySelectorAll('.card-responsive'))
+const $buttonResponsive = document.querySelector('.responsive-button')
+
+for(let $card of $cardResponsive){
+    $card.addEventListener('click', () => {
+        $buttonResponsive.style.display = "block"
+    })
+}
+
 
 $slider.style.background = 'linear-gradient(to bottom right, #F76B1C, #FAD961) fixed'
 

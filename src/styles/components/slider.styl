@@ -10,25 +10,20 @@
     overflow hidden
 
      // PREVIOUS AND NEXT CARD - INVISBLE
-    .previous
+    .previous, .next
         width 3.9vw
         height 75vh
         position fixed
-        left 0
         top 15%
         background #000
         opacity 0
         z-index 20
-
+        &:hover
+            cursor pointer
     .next
-        width 3.9vw
-        height 75vh
-        position fixed
         right 0
-        top 15%
-        background #000
-        opacity 0
-        z-index 20
+    .previous
+        left 0
 
     // NOUN OF THE GENRE IN THE BACKGROUND
     .background-genre
@@ -124,3 +119,76 @@
                 padding 0.5rem 4rem
                 border solid #000 0.18rem
                 border-radius 3rem
+
+.overflow 
+    .responsive
+        display none
+        padding-top 2rem
+        height 100vh
+        h2
+            font-family 'EXODUS - PERSONAL USE', sans-serif
+            color #000000
+            text-align center
+            font-size 1.4rem
+            margin-bottom 0.8rem
+        p.header
+            font-family 'EXODUS - PERSONAL USE', sans-serif 
+            text-align center
+            font-size 0.3rem
+        .cards-responsive
+            .card-responsive
+                background orange
+                margin 2rem auto
+                width 90%
+                border-radius 1.6rem
+                position relative
+                transition 0.5s ease-in-out
+                // display inline-block
+                &:hover
+                    cursor pointer
+                .responsive-button
+                    display none
+                    width 18vw
+                    background #fff
+                    vertical-align top
+                    border-radius 1.6rem
+                    // height 7r
+                    position absolute
+                    top 0%
+                    right 0%
+                .left
+                    position absolute
+                    top 4%
+                    left 10%
+                    color #fff
+                    font-family 'Raleway', sans-serif
+                    font-weight 700
+                    opacity 0.1
+                    font-size 5em
+                .right
+                    display inline-block
+                    padding-left 1.6rem
+                    h3
+                        color #ffffff
+                        text-transform uppercase
+                        font-family 'Raleway', sans-serif
+                        font-weight 700
+                        margin-bottom 0.6rem
+                        padding-top 1rem
+                    p
+                        font-family 'Raleway', sans-serif
+                        color #ffffff
+                        line-height 1.1rem
+                        font-size 0.6rem
+                        font-weight 100
+                        padding-bottom 1rem
+                        padding-right 1rem
+
+
+@media screen and (max-width: 840px) 
+  .overflow
+    .slider
+        display none
+    .responsive
+        display block
+

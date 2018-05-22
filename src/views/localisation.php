@@ -10,10 +10,10 @@ include("../scripts/geoloc/geoipregionvars.php");
 
 $gi = geoip_open(realpath("../scripts/geoloc/GeoLiteCity.dat"),GEOIP_STANDARD);
 
-$record = geoip_record_by_addr($gi,"92.206.151.131");
+$record = geoip_record_by_addr($gi,"92.169.10.227");
 // $_SERVER['REMOTE_ADDR'] à la place de l'adresse IP
 
-echo $record->country_name . "\n";
+// echo $record->country_name . "\n";
 // echo $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";
 // echo $record->city . "\n";
 // echo $record->postal_code . "\n";
@@ -24,4 +24,4 @@ geoip_close($gi);
 
 ?>
 
-<img style="width=1%;" class="stamp hidden" src="../assets/images/<?=$record->country_code?>_<?=$genre->name;?>.png" alt="stamp"/>
+<img style="width:29%;" class="stamp hidden" src="../assets/images/stamps/<?=$record->country_code?>_<?=$genre->name;?>.png" alt="stamp"/>

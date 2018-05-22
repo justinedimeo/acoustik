@@ -1,5 +1,5 @@
 <header>
-    <h1 class>Acoustik</h1>
+    <h1><a href="../index.php">Acoustik</a></h1>
     <div class="search">
         <form class="search-song" action="#" method="post">
             <img src="../assets/images/search.svg" alt="search">
