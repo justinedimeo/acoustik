@@ -14,7 +14,6 @@ try
 
     // Set fetch mode to object
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    die('hey!');
 }
 catch (Exception $e)
 {
