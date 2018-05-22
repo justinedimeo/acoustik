@@ -1,5 +1,14 @@
 <?php
     include 'config.php';
+
+    $query = $pdo->query('SELECT * FROM genres  WHERE id = '.$_GET['id']);
+    $genre = $query->fetch();
+
+    $genre_ = $genre->name;
+    $gradient = $genre->background;
+
+    $query = $pdo->query('SELECT * FROM sounds');
+    $sounds = $query->fetchAll();
 ?>
 
     <!DOCTYPE html>
@@ -16,7 +25,7 @@
     </head>
 
     <body>
-        <div class="custom" style="background : linear-gradient(to bottom right, #50B3F3, #9BC2EE) fixed">
+        <div class="custom" style="background: linear-gradient(to bottom right, <?= $gradient; ?>) fixed">
             <?php include 'header.php' ?>
             <h3>Well Done !</h3>
             <p>Chose a stamp of your location and let the world know you rock ✌️</p>

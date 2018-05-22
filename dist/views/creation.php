@@ -103,9 +103,9 @@
             </div>
             <button class="play">PLAY</button>
             <div class="result-sound"></div>
+            <a href="custom.php?id=<?= $_GET['id']?>">Confirmer</a>
         </div>
     </div>
-
     
     <!-- Sounds -->
     <?php foreach($sounds as $sound): ?>
