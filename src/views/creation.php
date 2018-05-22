@@ -101,6 +101,8 @@
                 </div>
                 <span class="language-qwerty">Qwerty</span>
             </div>
+            <button class="play">PLAY</button>
+            <div class="result-sound"></div>
         </div>
     </div>
 
