@@ -1,5 +1,10 @@
 <?php
-console.log('coucou');
+
+$query = $pdo->query('SELECT * FROM genres  WHERE id = '.$_GET['id']);
+$genre = $query->fetch();
+
+$genre_ = $genre->name;
+
 include("../scripts/geoloc/geoipcity.inc");
 include("../scripts/geoloc/geoipregionvars.php");
 
@@ -17,8 +22,6 @@ echo $record->country_name . "\n";
 
 geoip_close($gi);
 
-
-
 ?>
 
-<img class="stamp hidden" src="../assets/images/<?=$record->country_code?>.png" alt="stamp"/>
+<img style="width=1%;" class="stamp hidden" src="../assets/images/<?=$record->country_code?>_<?=$genre->name;?>.png" alt="stamp"/>

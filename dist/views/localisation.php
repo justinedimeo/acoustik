@@ -1,5 +1,10 @@
 <?php
-console.log('coucou');
+
+$query = $pdo->query('SELECT * FROM genres  WHERE id = '.$_GET['id']);
+$genre = $query->fetch();
+
+$genre_ = $genre->name;
+
 include("../scripts/geoloc/geoipcity.inc");
 include("../scripts/geoloc/geoipregionvars.php");
 
@@ -8,7 +13,7 @@ $gi = geoip_open(realpath("../scripts/geoloc/GeoLiteCity.dat"),GEOIP_STANDARD);
 $record = geoip_record_by_addr($gi,"92.206.151.131");
 // $_SERVER['REMOTE_ADDR'] à la place de l'adresse IP
 
-echo $record->country_name . "\n";
+// echo $record->country_name . "\n";
 // echo $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";
 // echo $record->city . "\n";
 // echo $record->postal_code . "\n";
@@ -17,8 +22,6 @@ echo $record->country_name . "\n";
 
 geoip_close($gi);
 
-
-
 ?>
 
-<img class="stamp hidden" src="../assets/images/<?=$record->country_code?>.png" alt="stamp"/>
+<img style="width:20%;" class="stamp hidden" src="../assets/images/<?=$record->country_code?>_<?=$genre->name;?>.png" alt="stamp"/>
