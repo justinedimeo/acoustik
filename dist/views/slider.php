@@ -47,6 +47,26 @@
         </div>
         <div class="next"></div>
     </div>
+    <div class="responsive">
+        <h2>Acoustik</h2>
+        <p class="header">World music</p>
+        <div class="cards-responsive">
+            <?php foreach($genres as $_genre): ?>
+            <div style="background: <?= $_genre->color ?>" class="card-responsive">
+                <div class="left">
+                    <?= $_genre->name ?>
+                </div>
+                <div class="right">
+                    <h3>Acoustik <?= $_genre->name ?> theme</h3>
+                    <p><?= $_genre->text ?></p>
+                    <div class="responsive-button">
+                    <a href="creation.php?id=<?= $_genre->id ?>">ok</a>
+                </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
     <script src="../scripts/cardSwipe.js"></script>
 </body>
 
