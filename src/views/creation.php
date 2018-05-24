@@ -39,7 +39,7 @@
             <div class="container">
             <div class="container-left left">
                 <!-- Remplacer par une boucle for quand on aura fait les bdd -->
-                <div class="instrument">
+                <div class="instrument first-instru">
                     <span><?= $instrument1; ?></span>
                     <div class="boxes">
                         <div class="box box-visible key-65" data-sound="1" style="color: <?= $color; ?>">A</div>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="instrument">
-                    <span><?= $instrument2; ?></span>
+                    <span class="main-instru"><img src="../assets/images/star.svg" alt="main instrument"><?= $instrument2; ?></span>
                     <div class="boxes">
                         <div class="box box-visible key-81" data-sound="4" style="color: <?= $color; ?>">Q</div>
                         <div class="box box-visible key-83" data-sound="5" style="color: <?= $color; ?>">S</div>
@@ -104,7 +104,7 @@
             <div class="result-sound"></div>
         </div>
         <a class="confirm-button" href="custom.php?id=<?= $_GET['id']?>">Send music</a>
-        <a href="#" class="play confirm-button">replay sound</a>
+        <a href="#" class="play confirm-button">replay music</a>
     </div>
     
     <!-- Sounds -->
