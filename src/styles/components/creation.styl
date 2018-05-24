@@ -1,7 +1,7 @@
 body
     #creation
         width 100%
-        height 900px
+        height 100vh
         // background linear-gradient(to bottom right, #F76B1C, #FAD961) fixed
         // padding 4rem
         font-size 2rem
@@ -9,6 +9,7 @@ body
         color #fff
         .centered
             text-align center
+            padding-bottom 2rem
             h1.creation-page
                 font-weight 700
                 letter-spacing 0.1rem
@@ -63,18 +64,26 @@ body
                     vertical-align middle
                     margin-left 6rem // 4rem shift between left and right margins
                     margin-right 6rem
-                    // margin-bottom -12rem
+                    &:hover
+                        cursor pointer
                     .rec-button
                         background #fff
                         width 3.6rem
                         height 3.6rem
                         border-radius 3rem
+                        &:hover
+                            cursor pointer
+                        &:hover .rec-middle
+                            transform scale(0.87)
                         .rec-middle
                             background linear-gradient(to bottom right, #9F041B, #F5515F)
                             width 2rem
                             height 2rem
                             border-radius 3rem
-                            margin-left 0.8rem
+                            margin auto
+                            transition 0.3s ease-in
+                            &:hover
+                                cursor pointer
                     .rec-text
                         font-size 1.2rem
                         font-weight 700
@@ -82,9 +91,15 @@ body
                         letter-spacing 0.3rem
                         margin-left 0.4rem
             .language
-                width 15rem
+                // width 15rem
+                text-align right
+                // display inline-block
+                // position absolute
+                // bottom 2%
+                // right 16%
                 margin-top 4rem
-                margin-left 52rem
+                margin-right 13rem
+                // margin-left 52rem
                 span
                     font-size 1rem
                     font-weight 600
@@ -108,3 +123,19 @@ body
                         box-shadow 0 2px rgba(0, 0, 0, 0.1)
                         transform translateX(0)
                         transition transform  0.3s ease-in
+        .confirm-button
+            font-size 1rem
+            color #fff
+            font-weight 800
+            letter-spacing 0.1rem
+            text-transform uppercase
+            font-family 'Raleway', sans-serif
+            border 0.05rem solid #fff
+            border-radius 10rem
+            padding 0.2rem 1rem
+            vertical-align top
+            display inline-block
+            margin-left 11.5rem
+            margin-top -3.4rem
+        .play  
+            margin-left 2rem

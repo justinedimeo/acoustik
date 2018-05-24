@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <div id="creation" style="background: linear-gradient(to bottom right, <?= $gradient; ?>) fixed">
+    <div id="creation" style="background: linear-gradient(to top left, <?= $gradient; ?>) fixed">
     <?php include 'header.php';?>
         <div class="centered">
             <!-- Title -->
@@ -101,10 +101,10 @@
                 </div>
                 <span class="language-qwerty">Qwerty</span>
             </div>
-            <button class="play">PLAY</button>
             <div class="result-sound"></div>
-            <a href="custom.php?id=<?= $_GET['id']?>">Confirmer</a>
         </div>
+        <a class="confirm-button" href="custom.php?id=<?= $_GET['id']?>">Send music</a>
+        <a href="#" class="play confirm-button">replay sound</a>
     </div>
     
     <!-- Sounds -->
