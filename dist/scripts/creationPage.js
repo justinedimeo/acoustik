@@ -6,6 +6,17 @@ const $languageButtonCircle = document.querySelector('.language-circle')
 const $languageAzerty = document.querySelector('.language-azerty')
 const $languageQwerty = document.querySelector('.language-qwerty')
 
+for(let $_box of $box){
+    $_box.addEventListener('mousedown', () => {
+        $_box.style.background = '#F5F5F5'
+        $_box.style.transform = 'translateY(0.3rem)'
+    })
+    $_box.addEventListener('mouseup', () => {
+        $_box.style.background = '#FFFFFF'
+        $_box.style.transform = 'translateY(0rem)'
+    })
+}
+
 $recButton.addEventListener('click', (even) => {
     event.preventDefault()
 
@@ -57,6 +68,9 @@ $recButton.addEventListener('click', (even) => {
 
         if ($box_) {
             playSound($box_.dataset.sound)
+            $box_.style.background = '#F5F5F5'
+            $box_.style.transform = 'translateY(0.3rem)'
+
             
             // Setting time counter
             let counter = setTimeout(alertFunc, 3000)
@@ -70,6 +84,15 @@ $recButton.addEventListener('click', (even) => {
                 }
                 newSound = []
             }
+        }
+    })
+
+    document.addEventListener('keyup', (event) => {
+        const $box_ = $box.find((element) => element.classList.contains(`key-${event.keyCode}`))
+
+        if ($box_) {
+            $box_.style.background = '#FFFFFF'
+            $box_.style.transform = 'translateY(0rem)'
         }
     })
 
