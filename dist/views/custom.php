@@ -9,6 +9,26 @@
 
     $query = $pdo->query('SELECT * FROM sounds');
     $sounds = $query->fetchAll();
+
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
+
+    $newSound = $_POST['result-sound'];
+    $newSound_ = str_split($newSound);
+
+    echo '<pre>';
+    print_r($newSound_);
+    echo '</pre>';
+
+    $query = $pdo->query('SELECT * FROM new_sounds');
+    $new_sounds = $query->fetchAll();
+
+    $prepare = $pdo->prepare('INSERT INTO new_sounds (sound) VALUES (:sound)');
+    $exec = $prepare->execute($newSound_[0]);
+    echo '<pre>';
+    print_r($new_sounds);
+    echo '</pre>';
 ?>
 
     <!DOCTYPE html>
