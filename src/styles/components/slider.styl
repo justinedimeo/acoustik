@@ -120,42 +120,48 @@
                 border solid #000 0.18rem
                 border-radius 3rem
 
+// RESPONSIVE
 .overflow 
     .responsive
         display none
-        padding-top 2rem
-        height 100vh
+        padding-top 2.5rem
+        height 140vh
         h2
             font-family 'EXODUS - PERSONAL USE', sans-serif
             color #000000
             text-align center
-            font-size 1.4rem
-            margin-bottom 0.8rem
+            font-size 1.6rem
+            margin-bottom 0.9rem
         p.header
             font-family 'EXODUS - PERSONAL USE', sans-serif 
             text-align center
-            font-size 0.3rem
+            font-size 0.5rem
+            margin-bottom 2.5rem
         .cards-responsive
             .card-responsive
                 background orange
                 margin 2rem auto
                 width 90%
-                border-radius 1.6rem
+                border-radius 1.2rem
                 position relative
                 transition 0.5s ease-in-out
-                // display inline-block
+                will-change opacity
                 &:hover
                     cursor pointer
                 .responsive-button
                     display none
                     width 18vw
+                    height 100%
                     background #fff
                     vertical-align top
-                    border-radius 1.6rem
-                    // height 7r
+                    border-radius 1.2rem
+                    text-align center
                     position absolute
                     top 0%
                     right 0%
+                    padding-top 3.1rem
+                    a
+                        font-family 'Raleway', sans-serif
                 .left
                     position absolute
                     top 4%
@@ -174,21 +180,40 @@
                         font-family 'Raleway', sans-serif
                         font-weight 700
                         margin-bottom 0.6rem
-                        padding-top 1rem
+                        padding-top 1.5rem
                     p
                         font-family 'Raleway', sans-serif
                         color #ffffff
                         line-height 1.1rem
-                        font-size 0.6rem
+                        font-size 0.8rem
                         font-weight 100
-                        padding-bottom 1rem
+                        padding-bottom 1.5rem
                         padding-right 1rem
-
+                        letter-spacing 0.07rem
+        .footer
+            font-family 'Raleway', sans-serif
+            text-align center
+            padding-top 3rem
+            :nth-child(1)
+                font-weight 800
+                font-size 1.3rem
+            :nth-child(2)
+                font-weight 100
+                font-size 1rem
+                padding-bottom 3rem
+                padding-top 0.5rem
 
 @media screen and (max-width: 840px) 
   .overflow
+    overflow visible
     .slider
         display none
     .responsive
         display block
+
+@media screen and (max-width: 1040px) 
+    .slider
+        .cards
+            margin-left 22vw
+
 

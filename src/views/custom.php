@@ -25,7 +25,7 @@
     </head>
 
     <body>
-        <div class="custom" style="background: linear-gradient(to bottom right, <?= $gradient; ?>) fixed">
+        <div class="custom" style="padding-top: 2.5vh; background: linear-gradient(to top left, <?= $gradient; ?>) fixed">
             <?php include 'header.php' ?>
             <h3>Well Done !</h3>
             <p>Chose a stamp of your location and let the world know you rock ✌️</p>
