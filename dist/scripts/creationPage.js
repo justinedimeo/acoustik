@@ -6,85 +6,103 @@ const $languageButtonCircle = document.querySelector('.language-circle')
 const $languageAzerty = document.querySelector('.language-azerty')
 const $languageQwerty = document.querySelector('.language-qwerty')
 const $resultSound = document.querySelector('.result-sound')
+const $timeLeft = document.querySelector('.time-left')
 
-// let time = " "
+for(let $_box of $box){
+    $_box.addEventListener('mousedown', () => {
+        $_box.style.background = '#F5F5F5'
+        $_box.style.transform = 'translateY(0.3rem)'
+    })
+    $_box.addEventListener('mouseup', () => {
+        $_box.style.background = '#FFFFFF'
+        $_box.style.transform = 'translateY(0rem)'
+    })
+
+    // Changing letters at language change !!! (VOIR CA APRES)
+    $languageButton.addEventListener('click', () => {
+        $_box.classList.toggle('box-invisible')
+        $_box.classList.toggle('box-visible')
+    })
+}
+
 let newSound = new Array()
-let newSound2 = new Array()
 
 $recButton.addEventListener('click', (even) => {
     event.preventDefault()
 
     // Create a new variable with the time at the moment where the user clicked on the recButton
-    // const date1 = new Date()
-    // const d1 = date1.getTime()
-    // const d3 = d1 + 3000
+    const date1 = new Date()
+    const d1 = date1.getTime()
+    const d3 = d1 + 20000
+    let i = 20
 
-    // // Every 1 second, setInterval does the checkTime function
-    // let counter2 = setInterval(checkTime, 1000)
-    // function checkTime() {
-    //     // Create a new variable with the time every 1 second
-    //     date2 = new Date
-    //     let d2 = date2.getTime()
+    // Every 1 second, setInterval does the updateTime function
+    let counter2 = setInterval(updateTime, 1000)
+    function updateTime() {
+        if (i > 0) {
+            i = i -1
+        }
+        // Update the counter
+        if (i == 0|| i == 1) {
+            $timeLeft.innerHTML = `Il reste ${i} seconde`
+        } else {
+            $timeLeft.innerHTML = `Il reste ${i} secondes`
+        }
+    }
 
-    //     // Check if the second variable is smaller than the first + 3sec (if it is you can play)
-    //     if(d2 < d3) {
-    for (const $box_ of $box) {    
+    // Create a second variable with the time it is every 0.5 second
+    d2 = ""
+    let counter3 = setInterval(checkTime, 500)
+    function checkTime() {
+        date2 = new Date
+        let d2 = date2.getTime()
+    }
+
+    // Check if the second variable is smaller than the first + 5sec
+    if(d2 <= d3) {
+        console.log('0.5sec')
+
+    for (const $box_ of $box) {
         // Making sound on click
         $box_.addEventListener('mousedown', (event) => {
             event.preventDefault()
-
+            
+            // Play the sound when the user clicks on a box
             playSound($box_.dataset.sound)
 
-            // Setting time counter before playing again
-            let counter = setTimeout(alertFunc, 3000)
+            // Push the data-sound of the box in the array newSound
+            newSound.push($box_.dataset.sound)
 
-            // Playing sounds
-            function alertFunc() {
-                // let time = "done"
-                newSound2.push($box_.dataset.sound)
-                newSound.push($box_.dataset.sound)
-                // Répète le son mais marche pas très bien, osef
-                for (let i = 0; i < newSound2.length; i++) {
-                    playSound(newSound2[i])
-                }
-                newSound2 = []
-                // Envoi le data-sound dans le html
-                $resultSound.innerHTML = newSound
-                // return time
-            }
-            // if (time != " ") {
-            //     console.log(time)
-            // }
-        })
-
-        // Changing letters at language change
-        $languageButton.addEventListener('click', () => {
-            $box_.classList.toggle('box-invisible')
-            $box_.classList.toggle('box-visible')
+            // Send the array with all the data-sounds in the form
+            $resultSound.value = newSound
         })
     }
-    // if (newSound != []){
-    //     console.log(newSound)
-    // }
+}
 
     document.addEventListener('keydown', (event) => {
         const $box_ = $box.find((element) => element.classList.contains(`key-${event.keyCode}`))
 
         if ($box_) {
-            playSound($box_.dataset.sound)
-            
-            // Setting time counter
-            let counter = setTimeout(alertFunc, 3000)
+            $box_.style.background = '#F5F5F5'
+            $box_.style.transform = 'translateY(0.3rem)'
 
-            // Playing sounds
-            newSound = []
-            function alertFunc() {
-                newSound.push($box_.dataset.sound)
-                for (let i = 0; i < newSound.length; i++) {
-                    playSound(newSound[i])
-                }
-                newSound = []
-            }
+            // Play the sound when the user clicks on a box
+            playSound($box_.dataset.sound)
+
+            // Push the data-sound of the box in the array newSound
+            newSound.push($box_.dataset.sound)
+
+            // Send the array with all the data-sounds in the form
+            $resultSound.value = newSound
+        }
+    })
+    
+    document.addEventListener('keyup', (event) => {
+        const $box_ = $box.find((element) => element.classList.contains(`key-${event.keyCode}`))
+
+        if ($box_) {
+            $box_.style.background = '#FFFFFF'
+            $box_.style.transform = 'translateY(0rem)'
         }
     })
 
@@ -94,9 +112,6 @@ $recButton.addEventListener('click', (even) => {
         $sound.currentTime = 0
         $sound.play()
     }
-    // End checkTime
-    // }
-// }
 
 })
 

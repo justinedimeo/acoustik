@@ -1,6 +1,6 @@
 <?php
     include 'config.php';
-
+    
     $query = $pdo->query('SELECT * FROM genres  WHERE id = '.$_GET['id']);
     $genre = $query->fetch();
 
@@ -67,6 +67,7 @@
                     <div class="rec-middle"></div>
                 </button>
                 <span class="rec-text">Rec</span>
+                <span class="time-left">Il reste 20 secondes</span>
             </div>
             <div class="container-left">
                 <!-- Remplacer par une boucle for quand on aura fait les bdd -->
@@ -101,9 +102,12 @@
                 </div>
                 <span class="language-qwerty">Qwerty</span>
             </div>
-            <div class="result-sound"></div>
         </div>
-        <a class="confirm-button" href="custom.php?id=<?= $_GET['id']?>">Send music</a>
+        <form action="custom.php?id=<?= $_GET['id']?>" method="post">
+            <input type="text" class="result-sound" name="result-sound" value="">
+            <input type="submit">
+            <!-- <button type"submit" class="confirm-button">Send music</button> -->
+        </form>
         <a href="#" class="play confirm-button">replay music</a>
     </div>
     
