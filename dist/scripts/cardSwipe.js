@@ -29,13 +29,13 @@ for (let $card of $cardResponsive) {
             $card.classList.add('active')
             if ($cardResponsive[0].classList.contains('active')) {
                 $responsive.style.background = $bgSlider[1]
-                $buttonResponsive[0].style.display = "inline-block"
+                $buttonResponsive[0].style.transform = "scaleX(1)"
                 $right[0].style.width = "70vw"
-                $buttonResponsive[1].style.display = "none"
+                $buttonResponsive[1].style.transform = "scaleX(0)"
                 $right[1].style.width = "90vw"
-                $buttonResponsive[2].style.display = "none"
+                $buttonResponsive[2].style.transform = "scaleX(0)"
                 $right[2].style.width = "90vw"
-                $buttonResponsive[3].style.display = "none"
+                $buttonResponsive[3].style.transform = "scaleX(0)"
                 $right[3].style.width = "90vw"
                 $cardResponsive[0].style.opacity = "1"
                 $cardResponsive[1].style.opacity = "0.2"
@@ -45,13 +45,13 @@ for (let $card of $cardResponsive) {
             }
             if ($cardResponsive[1].classList.contains('active')) {
                 $responsive.style.background = $bgSlider[2]
-                $buttonResponsive[0].style.display = "none"
+                $buttonResponsive[0].style.transform = "scaleX(0)"
                 $right[0].style.width = "90vw"
-                $buttonResponsive[1].style.display = "inline-block"
+                $buttonResponsive[1].style.transform = "scaleX(1)"
                 $right[1].style.width = "70vw"
-                $buttonResponsive[2].style.display = "none"
+                $buttonResponsive[2].style.transform = "scaleX(0)"
                 $right[2].style.width = "90vw"
-                $buttonResponsive[3].style.display = "none"
+                $buttonResponsive[3].style.transform = "scaleX(0)"
                 $right[3].style.width = "90vw"
                 $cardResponsive[0].style.opacity = "0.2"
                 $cardResponsive[1].style.opacity = "1"
@@ -61,13 +61,13 @@ for (let $card of $cardResponsive) {
             }
             if ($cardResponsive[2].classList.contains('active')) {
                 $responsive.style.background = $bgSlider[3]
-                $buttonResponsive[0].style.display = "none"
+                $buttonResponsive[0].style.transform = "scaleX(0)"
                 $right[0].style.width = "90vw"
-                $buttonResponsive[1].style.display = "none"
+                $buttonResponsive[1].style.transform = "scaleX(0)"
                 $right[1].style.width = "90vw"
-                $buttonResponsive[2].style.display = "inline-block"
+                $buttonResponsive[2].style.transform = "scaleX(1)"
                 $right[2].style.width = "70vw"
-                $buttonResponsive[3].style.display = "none"
+                $buttonResponsive[3].style.transform = "scaleX(0)"
                 $right[3].style.width = "90vw"
                 $cardResponsive[0].style.opacity = "0.2"
                 $cardResponsive[1].style.opacity = "0.2"
@@ -77,13 +77,13 @@ for (let $card of $cardResponsive) {
             }
             if ($cardResponsive[3].classList.contains('active')) {
                 $responsive.style.background = $bgSlider[4]
-                $buttonResponsive[0].style.display = "none"
+                $buttonResponsive[0].style.transform = "scaleX(0)"
                 $right[0].style.width = "90vw"
-                $buttonResponsive[1].style.display = "none"
+                $buttonResponsive[1].style.transform = "scaleX(0)"
                 $right[1].style.width = "90vw"
-                $buttonResponsive[2].style.display = "none"
+                $buttonResponsive[2].style.transform = "scaleX(0)"
                 $right[2].style.width = "90vw"
-                $buttonResponsive[3].style.display = "inline-block"
+                $buttonResponsive[3].style.transform = "scaleX(1)"
                 $right[3].style.width = "70vw"
                 $cardResponsive[0].style.opacity = "0.2"
                 $cardResponsive[1].style.opacity = "0.2"

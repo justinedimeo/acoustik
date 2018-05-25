@@ -10,22 +10,34 @@
     $query = $pdo->query('SELECT * FROM sounds');
     $sounds = $query->fetchAll();
 
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
+    // echo '<pre>';
+    // print_r($_POST);
+    // echo '</pre>';
 
     $newSound = $_POST['result-sound'];
+
+    // echo '<pre>';
+    // var_dump($newSound);
+    // echo '</pre>';
+
     $newSound_ = str_split($newSound);
 
-    echo '<pre>';
-    print_r($newSound_);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($newSound_);
+    // echo '</pre>';
 
     $query = $pdo->query('SELECT * FROM new_sounds');
     $new_sounds = $query->fetchAll();
 
+    $data = ['sound' => $newSound];
+
     $prepare = $pdo->prepare('INSERT INTO new_sounds (sound) VALUES (:sound)');
-    $exec = $prepare->execute($newSound_[0]);
+    $exec = $prepare->execute($data);
+
+    // $query = $pdo->query('SELECT * FROM new_sounds  WHERE sound = '.$newSound);
+    // $song = $query->fetch();
+
+
     echo '<pre>';
     print_r($new_sounds);
     echo '</pre>';
@@ -57,7 +69,7 @@
             </div>
             <div class="cover" onclick="stamp();">
                 <p class="click-me">Click on me</p>
-                <p class="song-number">23</p>
+                <p class="song-number">22</p>
                 <?php include 'localisation.php' ?>
             </div>
         </div>
