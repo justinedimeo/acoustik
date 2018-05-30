@@ -1,11 +1,13 @@
 const $box = Array.from(document.querySelectorAll('.box'))
 const $sounds = Array.from(document.querySelectorAll('audio'))
 const $recButton = document.querySelector('.rec-button')
+const $recMiddle = document.querySelector('.rec-middle')
 const $languageButton = document.querySelector('.language-button')
 const $languageButtonCircle = document.querySelector('.language-circle')
 const $languageAzerty = document.querySelector('.language-azerty')
 const $languageQwerty = document.querySelector('.language-qwerty')
 const $resultSound = document.querySelector('.result-sound')
+const $orderSound = document.querySelector('.order-sound')
 const $timeLeft = document.querySelector('.time-left')
 
 for(let $_box of $box){
@@ -26,9 +28,11 @@ for(let $_box of $box){
 }
 
 let newSound = new Array()
+let orderSound = new Array()
 
 $recButton.addEventListener('click', (even) => {
     event.preventDefault()
+    $recMiddle.classList.add('action')
 
     // Create a new variable with the time at the moment where the user clicked on the recButton
     const date1 = new Date()
@@ -37,16 +41,17 @@ $recButton.addEventListener('click', (even) => {
     let i = 20
 
     // Every 1 second, setInterval does the updateTime function
-    let counter2 = setInterval(updateTime, 1000)
+    let counter2 = setInterval(updateTime, 100)
     function updateTime() {
         if (i > 0) {
-            i = i -1
+            i = (i * 10 - 0.1 * 10) / 10
+            result = i.toFixed(1)
         }
         // Update the counter
         if (i == 0|| i == 1) {
-            $timeLeft.innerHTML = `Il reste ${i} seconde`
+            $timeLeft.innerHTML = `${i}`
         } else {
-            $timeLeft.innerHTML = `Il reste ${i} secondes`
+            $timeLeft.innerHTML = `${i}`
         }
     }
 
@@ -91,9 +96,11 @@ $recButton.addEventListener('click', (even) => {
 
             // Push the data-sound of the box in the array newSound
             newSound.push($box_.dataset.sound)
+            orderSound.push(i)
 
             // Send the array with all the data-sounds in the form
             $resultSound.value = newSound
+            $orderSound.value = orderSound
         }
     })
     

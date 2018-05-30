@@ -10,37 +10,12 @@
     $query = $pdo->query('SELECT * FROM sounds');
     $sounds = $query->fetchAll();
 
-    // echo '<pre>';
-    // print_r($_POST);
-    // echo '</pre>';
-
     $newSound = $_POST['result-sound'];
-
-    // echo '<pre>';
-    // var_dump($newSound);
-    // echo '</pre>';
-
-    $newSound_ = str_split($newSound);
-
-    // echo '<pre>';
-    // var_dump($newSound_);
-    // echo '</pre>';
+    $orderSound = $_POST['order-sound'];
 
     $query = $pdo->query('SELECT * FROM new_sounds');
     $new_sounds = $query->fetchAll();
 
-    $data = ['sound' => $newSound];
-
-    $prepare = $pdo->prepare('INSERT INTO new_sounds (sound) VALUES (:sound)');
-    $exec = $prepare->execute($data);
-
-    // $query = $pdo->query('SELECT * FROM new_sounds  WHERE sound = '.$newSound);
-    // $song = $query->fetch();
-
-
-    echo '<pre>';
-    print_r($new_sounds);
-    echo '</pre>';
 ?>
 
     <!DOCTYPE html>
@@ -67,10 +42,14 @@
             <div class="button-custom">
                 <a href="#">Send</a>
             </div>
-            <div class="cover" onclick="stamp();">
+            <div class="cover">
                 <p class="click-me">Click on me</p>
-                <p class="song-number">22</p>
-                <?php include 'localisation.php' ?>
+                <?php include 'localisation.php';
+                      include 'newSound.php'; ?>
+                <p class="song-number">
+                    <?php $lastEl = end($new_sounds); ?>
+                    <?= $lastEl->id+1 ?>
+                </p>
             </div>
         </div>
         <script src="../scripts/stamp.js"></script>

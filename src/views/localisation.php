@@ -24,4 +24,4 @@ geoip_close($gi);
 
 ?>
 
-<img style="width:29%;" class="stamp hidden" src="../assets/images/stamps/<?=$record->country_code?>_<?=$genre->name;?>.png" alt="stamp"/>
+<img style="user-select : none; width:29%;" class="stamp hidden" src="../assets/images/stamps/<?=$record->country_code?>_<?=$genre->name;?>.png" alt="stamp"/>
