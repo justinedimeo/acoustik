@@ -68,6 +68,11 @@
                 </button>
                 <span class="rec-text">Rec</span>
                 <span class="time-left">20</span>
+                <form action="custom.php?id=<?= $_GET['id']?>" method="post">
+                    <input type="text" class="result-sound" name="result-sound" value="">
+                    <input type="text" class="order-sound" name="order-sound" value="">
+                    <input class="confirm-button" type="submit" value="Send">
+                </form>
             </div>
             <div class="container-left">
                 <!-- Remplacer par une boucle for quand on aura fait les bdd -->
@@ -103,12 +108,6 @@
                 <span class="language-qwerty">Qwerty</span>
             </div>
         </div>
-        <form action="custom.php?id=<?= $_GET['id']?>" method="post">
-            <input type="text" class="result-sound" name="result-sound" value="">
-            <input type="text" class="order-sound" name="order-sound" value="">
-            <input class="confirm-button" type="submit" value="Send">
-            <!-- <button type"submit" class="confirm-button">Send music</button> -->
-        </form>
     </div>
     
     <!-- Sounds -->

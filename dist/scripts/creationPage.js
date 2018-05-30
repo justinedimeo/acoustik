@@ -9,6 +9,7 @@ const $languageQwerty = document.querySelector('.language-qwerty')
 const $resultSound = document.querySelector('.result-sound')
 const $orderSound = document.querySelector('.order-sound')
 const $timeLeft = document.querySelector('.time-left')
+const $confirmButton = document.querySelector('.confirm-button')
 
 for(let $_box of $box){
     $_box.addEventListener('mousedown', () => {
@@ -45,8 +46,10 @@ $recButton.addEventListener('click', (even) => {
             result = i.toFixed(1)
         }
         // Update the counter
-        if (i == 0|| i == 1) {
+        if (i == 0) {
             $timeLeft.innerHTML = `${i}`
+            $timeLeft.style.display = 'none'
+            $confirmButton.style.visibility = 'visible'
         } else {
             $timeLeft.innerHTML = `${i}`
         }

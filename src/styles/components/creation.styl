@@ -77,6 +77,7 @@ body
                     vertical-align middle
                     margin-left 6rem // 4rem shift between left and right margins
                     margin-right 6rem
+                    vertical-align text-top
                     &:hover
                         cursor pointer
                     .rec-button
@@ -106,12 +107,12 @@ body
                         letter-spacing 0.3rem
                         margin-left 0.4rem
                     .time-left
-                        font-size 300%
+                        font-size 230%
                         font-weight bold
                         opacity 0.2
                         position absolute
-                        top 65%
-                        right 45%
+                        top 68%
+                        right 46.5%
             .language
                 text-align right
                 margin-top 4rem
@@ -140,6 +141,7 @@ body
                         transform translateX(0)
                         transition transform  0.3s ease-in
         form
+            text-align center
             .confirm-button
                 height 2rem
                 font-size 0.9rem
@@ -152,11 +154,18 @@ body
                 border-radius 10rem
                 padding 0.35rem 1rem
                 vertical-align top
-                display inline-block
-                // margin-left 12.9%
-                margin-top -3.4rem
+                visibility hidden
+                margin-top 3rem
+                margin-left -0.5rem
+                transition 0.4s ease-in
+                &:hover
+                    cursor pointer
+                    transform scale(1.1)
             .play  
                 margin-left 2rem
+                // margin-top 2rem
+            .result-sound, .order-sound
+                display none
 
 @keyframes action {
     from{
@@ -209,6 +218,7 @@ body
                             width 90vw
                             margin-top 1rem
                             .boxes
+                                margin-top: 0.5rem;
                                 .box
                                     width 17vw
                                     height 17vw
@@ -216,9 +226,13 @@ body
                                 .box:nth-child(1),.box:nth-child(2)
                                     margin-right 7.5vw
                     .rec-container
-                        position: absolute;
-                        top: 10%;
-                        left: -14%;
+                        position absolute
+                        top 10%
+                        left -14%
+                        .time-left
+                            top 15%
+                            right -317%
+                            font-size 150%
                         .rec-button 
                             width 2.5rem
                             height 2.5rem
