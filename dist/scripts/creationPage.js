@@ -34,10 +34,7 @@ $recButton.addEventListener('click', (even) => {
     event.preventDefault()
     $recMiddle.classList.add('action')
 
-    // Create a new variable with the time at the moment where the user clicked on the recButton
-    const date1 = new Date()
-    const d1 = date1.getTime()
-    const d3 = d1 + 20000
+    // Create a new variable with the time left to create the sound
     let i = 20
 
     // Every 1 second, setInterval does the updateTime function
@@ -54,18 +51,8 @@ $recButton.addEventListener('click', (even) => {
             $timeLeft.innerHTML = `${i}`
         }
     }
-
-    // Create a second variable with the time it is every 0.5 second
-    d2 = ""
-    let counter3 = setInterval(checkTime, 500)
-    function checkTime() {
-        date2 = new Date
-        let d2 = date2.getTime()
-    }
-
-    // Check if the second variable is smaller than the first + 5sec
-    if(d2 <= d3) {
-        console.log('0.5sec')
+    // Check if the counter is not 0
+    if (i != 0) {
 
     for (const $box_ of $box) {
         // Making sound on click
@@ -77,9 +64,11 @@ $recButton.addEventListener('click', (even) => {
 
             // Push the data-sound of the box in the array newSound
             newSound.push($box_.dataset.sound)
+            orderSound.push(i)
 
             // Send the array with all the data-sounds in the form
             $resultSound.value = newSound
+            $orderSound.value = orderSound
         })
     }
 }
