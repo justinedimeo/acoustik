@@ -33,7 +33,7 @@
 <body>
     <!-- Sounds -->
     <?php foreach ($sounds as $sound): ?>
-        <audio class="<?= $sound->id; ?>" src="<?= $sound->jazz; ?>"></audio>
+        <audio class="<?= $sound->id; ?>" src="<?= $sound->rock; ?>"></audio>
     <?php endforeach; ?>
 
     <script>
@@ -54,10 +54,22 @@
 
         // Pushing all the sounds id on an array without the ,
         array_sound = [];
-        for (let i = 0; i < new_sound.length; i++) {
-            if (new_sound[i] != ",") {
-                array_sound.push(new_sound[i]);
+        var2 = "";
+        for (let i = 0; i <= new_sound.length; i++) {
+            if (i !== (new_sound.length) && new_sound[i] !== ",") {
+                var2 = var2 + new_sound[i];                
+            } else {
+                array_sound.push(var2);
+                var2 = "";
             };
+            // if (i == (new_sound.length)) {
+            //     array_sound.push(var2);
+            // } else if (new_sound[i] == ",") {
+            //     array_sound.push(var2);
+            //     var2 = "";
+            // } else {
+            //     var2 = var2 + new_sound[i];
+            // }
         }; 
 
         // Pushing all the sounds_order id on an array without the ,
@@ -71,31 +83,25 @@
                 var1 = "";
             } else {
                 var1 = var1 + new_sound_order[l];
-            }
+            };
         };
-        console.log(array_sound_order);
-
-
+// 
         // Playing sounds with playSound function
-        let k = 20;
-        for (let j = 0; j < array_sound.length; j++) {
-                let counter2 = setInterval(updateTime, 100);
-                function updateTime() {
-                    if (k > 0) {
-                        k = (k * 10 - 0.1 * 10) / 10;
-                        result = k.toFixed(1);
-                        if (k == array_sound_order[j]) {
-                        // playSound(array_sound[j]);
+        let k = 20;;
+        let counter2 = setInterval(updateTime, 100);
+        function updateTime() {
+            if (k > 0) {
+                for (let j = 0; j <= array_sound.length; j++) {
+                    if (k == array_sound_order[j]) {
+                        playSound(array_sound[j]);
                         console.log(array_sound[j]);
                         console.log(array_sound_order[j]);
-                        };
                     };
-                    // console.log(k);
                 };
+                k = (k * 10 - 0.1 * 10) / 10;
+                result = k.toFixed(1);
             };
-        // for (let j = 0; j < array_sound.length; j++) {
-        //     playSound(array_sound[j]);
-        // };
+        };
     </script>
     <!-- <script src="../scripts/player.js"></script> -->
 </body>
