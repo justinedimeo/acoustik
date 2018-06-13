@@ -13,5 +13,6 @@
 <body>
     <?php include 'views/config.php' ?>
     <a href="views/slider.php">Page slider</a>
+    <a href="views/player.php">Page player</a>
 </body>
 </html>

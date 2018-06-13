@@ -12,11 +12,8 @@
     $id = $_GET['id'] - 1;
 
     $sound_ = $new_sounds[$id]->sound;
+    $genre_ = $new_sounds[$id]->genre;
     $sound_order = $new_sounds[$id]->sound_order;
-
-    // echo '<pre>';
-    // print_r($sound_);
-    // echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +28,20 @@
     <title>Player</title>
 </head>
 <body>
+
+    <div class="player">
+        <?php include 'header.php' ?>
+        <div class="disc">
+            <div class="center-disk"></div>
+        </div>
+        <p class="music-id"><?= $id + 1 ?></p>
+        <p class="music-genre"><?= $genre_ ?></p>
+    </div>
+
     <!-- Sounds -->
     <?php foreach ($sounds as $sound): ?>
         <audio class="<?= $sound->id; ?>" src="<?= $sound->rock; ?>"></audio>
     <?php endforeach; ?>
-
     <script>
         const $sounds = Array.from(document.querySelectorAll('audio'));
 
@@ -62,14 +68,6 @@
                 array_sound.push(var2);
                 var2 = "";
             };
-            // if (i == (new_sound.length)) {
-            //     array_sound.push(var2);
-            // } else if (new_sound[i] == ",") {
-            //     array_sound.push(var2);
-            //     var2 = "";
-            // } else {
-            //     var2 = var2 + new_sound[i];
-            // }
         }; 
 
         // Pushing all the sounds_order id on an array without the ,
