@@ -2,7 +2,6 @@
     width 100vw
     height 100vh
     background: linear-gradient(to bottom right, #9BC2EE, #50B3F3)
-    overflow hidden
     h2
         width 70%
         margin auto
@@ -11,6 +10,7 @@
         font-size 1.1rem
         text-align center
         margin-bottom 2rem
+        line-height 1.3rem
     form
         display inline-block
         margin-left 55%
@@ -55,3 +55,21 @@
             padding 0.5rem 2rem
             border 0.1rem solid #fff
             border-radius 3rem
+
+@media screen and (max-width: 740px)
+    .index
+        header 
+            padding: 0rem
+            text-align center
+        h2
+            font-size 0.9rem
+        form
+            margin 1.7rem 0rem
+        .music-types
+            margin-bottom 4rem
+            a
+                width 8rem
+                height 8rem
+                margin-bottom 1rem
+            .rock,.rap,.pop
+                margin-right 0rem

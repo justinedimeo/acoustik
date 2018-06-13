@@ -29,7 +29,7 @@
                 <div class="center-disk"></div>
             </div>
             <div class="button-custom">
-                <a href="#">Send</a>
+                <a href="../index.php">Send</a>
             </div>
             <div class="cover">
                 <p class="click-me">Click on me</p>
