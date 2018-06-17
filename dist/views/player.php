@@ -9,12 +9,9 @@
     $query = $pdo->query('SELECT * FROM new_sounds');
     $new_sounds = $query->fetchAll();
 
-    // Getting id
     $id = $_GET['id'] - 1;
 
-    // Getting sound, country and genre from the specific element
     $sound_ = $new_sounds[$id]->sound;
-    $country_ = $new_sounds[$id]->country;
     $genre_ = $new_sounds[$id]->genre;
     $sound_order = $new_sounds[$id]->sound_order;
 
@@ -25,20 +22,15 @@
 
         <div class="player">
             <?php include 'header.php' ?>
+            <p class="wait">You may have to wait a little before the sound loads</p>
             <div class="disc">
                 <div class="center-disk"></div>
             </div>
-            <!-- Music id -->
             <p class="music-id">
                 <?= $id + 1 ?>
             </p>
-            <!-- Type music -->
             <p class="music-genre">
                 <?= $genre_ ?>
-            </p>
-            <!-- Country where the music has been created -->
-            <p class="music-genre">
-                Created in : <?= $country_ ?>
             </p>
         </div>
 

@@ -1,7 +1,6 @@
 <?php
     include 'config.php';
     
-    // Get the sounds of the type selected
     $query = $pdo->query('SELECT * FROM genres  WHERE id = '.$_GET['id']);
     $genre = $query->fetch();
 

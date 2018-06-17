@@ -22,6 +22,7 @@
 
         <div class="player">
             <?php include 'header.php' ?>
+            <p class="wait">You may have to wait a little before the sound loads</p>
             <div class="disc">
                 <div class="center-disk"></div>
             </div>
