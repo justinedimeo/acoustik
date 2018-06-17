@@ -40,7 +40,7 @@ Design and development of:
 ## Future 👀
 
 We know that our project is far from being over. Because of the time we didn't do what we really wanted to. We would like to put a webGL planet with bubble songs around in the home page. However we didn't manage to control the "click" on it so we changed it for something way more easier.
-We would have liked to have a custom feature bigger. For exemple add a titlle or chose between diferent stamps. 
+We would have liked to have a custom feature bigger. For exemple add a title or chose between different stamps. 
 
 ---
 
