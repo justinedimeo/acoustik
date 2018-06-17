@@ -10,8 +10,8 @@ include("../scripts/geoloc/geoipregionvars.php");
 
 $gi = geoip_open(realpath("../scripts/geoloc/GeoLiteCity.dat"),GEOIP_STANDARD);
 
-$record = geoip_record_by_addr($gi,"92.169.10.227");
-// $_SERVER['REMOTE_ADDR'] à la place de l'adresse IP
+$record = geoip_record_by_addr($gi, $_SERVER['REMOTE_ADDR']);
+// $_SERVER['REMOTE_ADDR'] to get IP adress
 
 // echo $record->country_name . "\n";
 // echo $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";

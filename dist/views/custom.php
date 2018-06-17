@@ -25,6 +25,7 @@
             <?php include 'header.php' ?>
             <h3>Well Done !</h3>
             <p>Chose a stamp of your location and let the world know you rock ✌️</p>
+            <p>Don't forget to note your song ID if you want to listen to it again</p>
             <div class="disc">
                 <div class="center-disk"></div>
             </div>

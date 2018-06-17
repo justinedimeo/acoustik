@@ -1,18 +1,23 @@
 <?php
     include 'views/config.php';
     
+    // Get rock musics created
     $query = $pdo->query('SELECT * FROM new_sounds  WHERE genre = "rock" ');
     $rock = $query->fetchAll();
 
+    // Get pop musics created
     $query = $pdo->query('SELECT * FROM new_sounds  WHERE genre = "pop"');
     $pop = $query->fetchAll();
 
+    // Get jazz musics created
     $query = $pdo->query('SELECT * FROM new_sounds  WHERE genre = "jazz"');
     $jazz = $query->fetchAll();
 
+    // Get rap musics created
     $query = $pdo->query('SELECT * FROM new_sounds  WHERE genre = "rap"');
     $rap = $query->fetchAll();
 
+    // Get random element of each array
     $track_rock = $rock[mt_rand(0, 1)];
     $track_pop = $pop[mt_rand(0, 1)];
     $track_jazz = $jazz[mt_rand(0, 1)];
@@ -47,25 +52,29 @@
                 </h1>
                 <!-- Search a song -->
                 <form action="views/player.php" method="get">
-                    <input type="search" name="id" placeholder="Search a music">
+                    <input type="search" name="id" placeholder="Type a music id">
                     <button type="submit">Search</button>
                 </form>
             </header>
             <h2>Listen to music created all around the world. Or create one and become a rock star 🤘 !</h2>
+
+            <!-- Random music bubbles -->
             <div class="music-types">
                 <a class="rock" href="views/player.php?id=<?= $track_rock->id ?>">
-                    <p>Rock</p>
+                    <p>Random Rock music</p>
                 </a>
                 <a class="pop" href="views/player.php?id=<?= $track_pop->id ?>">
-                    <p>Pop</p>
+                    <p>Random Pop music</p>
                 </a>
                 <a class="rap" href="views/player.php?id=<?= $track_rap->id ?>">
-                    <p>Rap</p>
+                    <p>Random Rap music</p>
                 </a>
                 <a class="jazz" href="views/player.php?id=<?= $track_jazz->id ?>">
-                    <p>Jazz</p>
+                    <p>Random Jazz music</p>
                 </a>
             </div>
+
+            <!-- Create music button -->
             <div class="button">
                 <a class="create-button" href="views/slider.php">Create Music</a>
             </div>
