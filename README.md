@@ -33,6 +33,7 @@ Design and development of:
 * search engine
 * random album art for covers
 * sending order of sounds in database and be able to listen to it again
+* responsive
 
 ---
 
