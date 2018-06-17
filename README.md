@@ -1,7 +1,7 @@
 # Acoustik - Music Experience 🎹
 Acoustik is a music experience we made for a school project at Hetic.
 Enjoy 🎵 .
-https://www.hetic.net/
+http://acoustik.world/
 
 ---
 
