@@ -2,6 +2,7 @@ const $stamp = document.querySelector('.stamp')
 const $cover = document.querySelector('.cover')
 const $click = document.querySelector('.click-me')
 
+// Add stamp with random position on click event
 $cover.addEventListener('click', () => {
     if ($stamp.classList.contains('hidden')) {
         $posY = (Math.floor((80)*Math.random()+1))

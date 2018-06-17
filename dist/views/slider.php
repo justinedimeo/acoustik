@@ -1,6 +1,7 @@
 <?php
     include 'config.php';
 
+    // Getting all the types
     $query = $pdo->query('SELECT * FROM genres');
     $genres = $query->fetchAll();
 
@@ -9,25 +10,38 @@
 ?>
 
 <body class="overflow">
+
+    <!-- Slider start -->
     <div class="slider">
+
+        <!-- Header -->
         <?php include 'header.php';?>
         <p class="background-genre">Jazz</p>
+
+        <!-- To get the previous card -->
         <div class="previous"></div>
+
+        <!-- Cards -->
         <div class="cards">
+
         <?php foreach($genres as $_genre): ?>
             <div class="card-genre <?= $_genre->name ?>">
+
                 <!-- Colored part of the card -->
                 <div class="card" style="background: <?= $_genre->color ?>">
                     <h3 class="logo">Acoustik</h3>
                     <h3 class="title-card">Acoustik <?= $_genre->name ?> Theme</h3>
                     <p class="description-card"><?= $_genre->text ?></p>
+
                     <!-- Genre -->
                     <p class="genre"><?= $_genre->name ?></p>
+
                     <!-- Instrument -->
                     <div class="instrument-card">
                         <img src="<?= $_genre->image ?>" alt="saxophone">
                     </div>
                 </div>
+
                 <!-- White part of the card -->
                 <div class="card-create" style="box-shadow: 0px 0px 16px 0px <?= $_genre->color ?> ">
                     <a href="creation.php?id=<?= $_genre->id ?>" style="border-image: linear-gradient(to right, <?= $_genre->background ?>) 10; color: <?= $_genre->color ?>">Create</a>
@@ -35,17 +49,27 @@
             </div>
         <?php endforeach; ?>
         </div>
+
+        <!-- To get the next card -->
         <div class="next"></div>
     </div>
+
+    <!-- Responsive part -->
     <div class="responsive">
         <h2 class="title-responsive">Acoustik</h2>
         <p class="header">World music</p>
+
+        <!-- Cards -->
         <div class="cards-responsive">
             <?php foreach($genres as $_genre): ?>
             <div style="background: <?= $_genre->color ?>" class="card-responsive">
+
+                <!-- Left -->
                 <div class="left">
                     <?= $_genre->name ?>
                 </div>
+
+                <!-- Right -->
                 <div class="right">
                     <h3>Acoustik <?= $_genre->name ?> theme</h3>
                     <p><?= $_genre->text ?></p>
@@ -66,6 +90,8 @@
                 </div>
             </div>
             <?php endforeach; ?>
+
+            <!-- Footer -->
             <div class="footer">
                 <p>Dear You</p>
                 <p class="footer-chose">It's time to chose a theme</p>

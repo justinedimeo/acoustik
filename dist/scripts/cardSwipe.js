@@ -7,7 +7,6 @@ const $slider = document.querySelector('.slider')
 let $name = ['', 'jazz', 'rap', 'rock', 'pop']
 let $bgSlider = ['', 'linear-gradient(to bottom right, #F76B1C, #FAD961) fixed', 'linear-gradient(to bottom right, #429321, #C0E67B) fixed', 'linear-gradient(to bottom right, #9F041B, #F5515F) fixed', 'linear-gradient(to bottom right, #3E71E6, #ADC4EB) fixed']
 let $cardResponsive = Array.from(document.querySelectorAll('.card-responsive'))
-// const $buttonResponsive = document.querySelector('.responsive-button')
 let $buttonResponsive = Array.from(document.querySelectorAll('.responsive-button'))
 let $right = Array.from(document.querySelectorAll('.right'))
 const $responsive = document.querySelector('.responsive')
@@ -16,7 +15,7 @@ const $footerChose = document.querySelector('.footer-chose')
 const $title = document.querySelector('.title-responsive')
 const $header = document.querySelector('.header')
 
-
+// Animation of the responsive design
 for (let $card of $cardResponsive) {
     $card.addEventListener('click', () => {
         $header.style.color="#fff"
@@ -95,28 +94,22 @@ for (let $card of $cardResponsive) {
     })
 }
 
-
-
-// for (let $card of $cardResponsive) {
-//     $card.addEventListener('click', () => {
-//         $buttonResponsive.style.display = "inline-block"
-//         $right.style.width = "70vw"
-//     })
-// }
-
-
+// Background changing 
 $slider.style.background = 'linear-gradient(to bottom right, #F76B1C, #FAD961) fixed'
 
 let i = 1
 
+// Previous Card
 $previous.addEventListener('click', () => {
     previous()
 })
 
+// Next card
 $next.addEventListener('click', () => {
     next()
 })
 
+// Next or Previous card depending the keycode
 window.addEventListener("keydown", (event) => {
     if (event.keyCode == 39) {
         next()
@@ -125,6 +118,7 @@ window.addEventListener("keydown", (event) => {
     }
 })
 
+// Function previous card
 function previous() {
     if (i != 1) {
         $block.style.transform += 'translateX(11.8%)'
@@ -134,6 +128,7 @@ function previous() {
     }
 }
 
+// Function next card
 function next() {
     if (i != 4) {
         $block.style.transform += 'translateX(-11.8%)'
